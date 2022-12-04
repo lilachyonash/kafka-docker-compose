@@ -16,7 +16,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.stream.IntStream;
 import java.util.stream.StreamSupport;
 
-@RestController
+//@RestController
 public class HelloKafkaController {
 
     private static final Logger logger = LoggerFactory.getLogger(HelloKafkaController.class);
@@ -51,7 +51,7 @@ public class HelloKafkaController {
     public void listenAsObject(ConsumerRecord<String, PracticalAdvice> cr,
                                @Payload PracticalAdvice payload) {
         logger.info("Logger 1 [JSON] received key {}: Type [{}] | Payload: {} | Record: {}", cr.key(),
-                typeIdHeader(cr.headers()), payload, cr.toString());
+                typeIdHeader(cr.headers()), payload, cr);
         latch.countDown();
     }
 
@@ -60,7 +60,7 @@ public class HelloKafkaController {
     public void listenasString(ConsumerRecord<String, String> cr,
                                @Payload String payload) {
         logger.info("Logger 2 [String] received key {}: Type [{}] | Payload: {} | Record: {}", cr.key(),
-                typeIdHeader(cr.headers()), payload, cr.toString());
+                typeIdHeader(cr.headers()), payload, cr);
         latch.countDown();
     }
 
@@ -69,7 +69,7 @@ public class HelloKafkaController {
     public void listenAsByteArray(ConsumerRecord<String, byte[]> cr,
                                   @Payload byte[] payload) {
         logger.info("Logger 3 [ByteArray] received key {}: Type [{}] | Payload: {} | Record: {}", cr.key(),
-                typeIdHeader(cr.headers()), payload, cr.toString());
+                typeIdHeader(cr.headers()), payload, cr);
         latch.countDown();
     }
 

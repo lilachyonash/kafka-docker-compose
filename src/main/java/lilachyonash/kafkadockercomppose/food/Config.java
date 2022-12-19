@@ -19,7 +19,9 @@ public class Config {
         this.kafkaProperties = kafkaProperties;
     }
 
-    @Bean
+
+
+
     public ProducerFactory<String, String> producerFactory() {
         // get configs on application.properties/yml
         Map<String, Object> properties = kafkaProperties.buildProducerProperties();
@@ -35,7 +37,7 @@ public class Config {
     public NewTopic topic() {
         return TopicBuilder
                 .name("t.food.order")
-                .partitions(1)
+                .partitions(2)
                 .replicas(1)
                 .build();
     }

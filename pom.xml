@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>lilachyonash</groupId>
-    <artifactId>kafka-docker-comppose</artifactId>
+    <artifactId>kafka-docker-compose-producer</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>kafka-docker-compose</name>
     <description>kafka-docker-compose</description>
